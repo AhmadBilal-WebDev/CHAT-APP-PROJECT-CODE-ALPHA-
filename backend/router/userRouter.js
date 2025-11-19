@@ -44,19 +44,16 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 1024 * 1024 * 50 }, // 50 MB limit
+  limits: { fileSize: 1024 * 1024 * 50 },
 });
 
-// auth routes
 router.post("/signup", signUpValidation, signUp);
 router.post("/login", logInValidation, logIn);
 router.get("/getAllUsers", getAllUsers);
 
-// message routes
 router.post("/message", sendMessage);
 router.get("/showAllMessages/:senderId/:receiverId", showMessage);
 
-// upload route (multipart/form-data)
 router.post("/upload", upload.single("file"), uploadFile);
 
 module.exports = router;

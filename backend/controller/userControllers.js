@@ -1,4 +1,3 @@
-// controllers/userControllers.js
 const Message = require("../model/messageModel");
 const userModel = require("../model/userModel");
 const bcrypt = require("bcrypt");
@@ -6,7 +5,6 @@ const path = require("path");
 const fs = require("fs");
 const SERVER_URL = process.env.SERVER_URL || "http://localhost:5000";
 
-// ---------- auth controllers (your existing functions) ----------
 const signUp = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -93,7 +91,6 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-// ---------- message controllers ----------
 
 const sendMessage = async (req, res) => {
   try {
@@ -125,7 +122,6 @@ const sendMessage = async (req, res) => {
   }
 };
 
-// ---------- message controllers ----------
 const showMessage = async (req, res) => {
   try {
     const { senderId, receiverId } = req.params;
@@ -138,7 +134,6 @@ const showMessage = async (req, res) => {
       .sort({ createdAt: 1 })
       .lean();
 
-    // prepend SERVER_URL to fileUrl if exists
     const updatedMsg = msg.map((m) => {
       if (m.fileUrl && m.fileUrl.startsWith("/uploads")) {
         return { ...m, fileUrl: SERVER_URL + m.fileUrl };

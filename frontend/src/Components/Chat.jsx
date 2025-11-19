@@ -495,7 +495,7 @@ const ChatDashboard = () => {
                   onClick={handleClickCall}
                   className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-sm flex items-center gap-2"
                 >
-                  📞 <span>Call</span>
+                  📞
                 </button>
                 <button
                   onClick={() => {

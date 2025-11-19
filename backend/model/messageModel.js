@@ -13,9 +13,9 @@ const schema = new mongoose.Schema({
     required: true,
   },
 
-  fileUrl: { type: String, default: null },   // ✅
-  fileType: { type: String, default: null },  // ✅
-  fileName: { type: String, default: null },  // ✅
+  fileUrl: { type: String, default: null }, 
+  fileType: { type: String, default: null },  
+  fileName: { type: String, default: null }, 
 
   time: {
     type: String,
