@@ -268,10 +268,8 @@ const CallScreen = ({
  return (
   <div className="fixed inset-0 z-50 bg-gray-900 flex flex-col md:flex-row items-center justify-center p-2">
 
-    {/* MAIN VIDEO AREA */}
     <div className="flex-1 relative w-full md:w-[70%] h-[75vh] md:h-[80vh] bg-black rounded-xl overflow-hidden shadow-lg">
       
-      {/* Remote Video */}
       <video 
         ref={remoteVideoRef} 
         autoPlay 
@@ -282,7 +280,6 @@ const CallScreen = ({
         {remoteUser?.username || "Remote"}
       </div>
 
-      {/* Local Video Draggable */}
       <div className="absolute bottom-4 right-4 w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden border-2 border-gray-600 shadow-lg cursor-move"
            draggable
            onDragStart={(e) => e.preventDefault()}>
@@ -298,7 +295,6 @@ const CallScreen = ({
         </div>
       </div>
 
-      {/* Call Status */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-gray-800/70 text-white px-4 py-1 rounded-full shadow">
         {status === "starting" && "Starting..."}
         {status === "ringing" && "Ringing..."}
@@ -308,7 +304,6 @@ const CallScreen = ({
 
     </div>
 
-    {/* CONTROL PANEL */}
     <div className="w-full md:w-[28%] h-auto md:h-[80vh] bg-gray-800 text-white rounded-xl shadow-lg flex flex-col justify-between p-4 mt-4 md:mt-0 md:ml-4">
       
       <div>
